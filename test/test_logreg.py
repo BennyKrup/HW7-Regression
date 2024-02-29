@@ -1,20 +1,3 @@
-# ---
-# jupyter:
-#   jupytext:
-#     cell_metadata_filter: -all
-#     custom_cell_magics: kql
-#     text_representation:
-#       extension: .py
-#       format_name: percent
-#       format_version: '1.3'
-#       jupytext_version: 1.11.2
-#   kernelspec:
-#     display_name: Python 3
-#     language: python
-#     name: python3
-# ---
-
-# %%
 
 """
 Write your unit tests here. Some tests to include are listed below.
@@ -128,21 +111,3 @@ def test_training():
 
 
 
-
-# %%
-#change to current folder
-import os
-#/Users/beniaminkrupkin/Desktop/BMI203/HW7-Regression
-os.chdir('/Users/beniaminkrupkin/Desktop/BMI203/HW7-Regression')
-
-# %%
-#test
-test_prediction()
-test_loss_function()
-test_gradient()
-test_training()
-print("All tests passed!")
-
-# %%
-
-# %%
