@@ -1,3 +1,20 @@
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: -all
+#     custom_cell_magics: kql
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.11.2
+#   kernelspec:
+#     display_name: Python 3
+#     language: python
+#     name: python3
+# ---
+
+# %%
 
 """
 Write your unit tests here. Some tests to include are listed below.
@@ -33,7 +50,8 @@ def test_prediction():
     )
 
     # Train model
-    log_model = logreg.LogisticRegressor(num_feats=6, learning_rate=0.005, tol=0.001, max_iter=300, batch_size=128)
+    np.random.seed(42)
+    log_model = logreg.LogisticRegressor(num_feats=6, learning_rate=0.001, tol=0.00001, max_iter = 300, batch_size = 100)
     log_model.train_model(X_train, y_train, X_val, y_val)
     log_model.plot_loss_history()
 
@@ -48,12 +66,14 @@ def test_prediction():
     # Check better than chance
     train_accuracy = sklearn.metrics.accuracy_score(y_train, predictions_train)
     val_accuracy = sklearn.metrics.accuracy_score(y_val, predictions_val)
+    print(f"Train accuracy: {train_accuracy}")
+    print(f"Validation accuracy: {val_accuracy}")
     assert train_accuracy > 0.5, "Train accuracy not better than chance"
     assert val_accuracy > 0.5, "Validation accuracy not better than chance"
 
 def test_loss_function():
 
-		log_model = logreg.LogisticRegressor(num_feats=2, learning_rate=0.005, tol=0.001, max_iter=300, batch_size=128)
+		log_model = logreg.LogisticRegressor(num_feats=2, learning_rate=0.001, tol=0.1, max_iter=1000, batch_size=264)
 
 		# test case
 		X_test = np.array([[1, 1], [1, -1]])
@@ -107,3 +127,22 @@ def test_training():
 
 
 
+
+
+# %%
+#change to current folder
+import os
+#/Users/beniaminkrupkin/Desktop/BMI203/HW7-Regression
+os.chdir('/Users/beniaminkrupkin/Desktop/BMI203/HW7-Regression')
+
+# %%
+#test
+test_prediction()
+test_loss_function()
+test_gradient()
+test_training()
+print("All tests passed!")
+
+# %%
+
+# %%
