@@ -1,3 +1,6 @@
+![Tests](https://github.com/BennyKrup/HW7-Regression/actions/workflows/test.yml/badge.svg)
+
+
 # HW 7: logistic regression
 
 In this assignment, you'll implement a classifier using logistic regression, optimized with gradient descent.

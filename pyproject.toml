@@ -1,0 +1,20 @@
+[build-system]
+requires = [
+	"flit_core >=3.2,<4",
+	"python_version >='3.9.18'"
+	]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "hmm"
+authors = [{name = "Beniamin Krupkin", email = "Beniamin.Krupkin@ucsf.edu"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+dependencies = [
+    "pytest", "numpy", "scikit-learn", "matplotlib"
+]
+
+[project.urls]
+Home = "https://github.com/BennyKrup/HW7-Regression"
